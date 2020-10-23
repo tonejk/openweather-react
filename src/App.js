@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WeatherForm from "./components/WeatherForm";
+import WeatherChart from "./components/WeatherChart";
 import './App.css';
 const axios = require('axios').default;
 
@@ -11,10 +12,18 @@ function App() {
     const getWeatherData = (e) => {
         e.preventDefault();
         const city = e.target.city.value;
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},fi&units=metric&appid=${API_KEY}`)
-        .then(function (data) {
-          setWeather(data.data);
-          console.log(data.data);
+        const country = e.target.country.value;
+        
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}fi&units=metric&appid=${API_KEY}`)
+        .then(function (apiData) {
+            setWeather({
+                data: apiData,
+                city: apiData.data.name,
+                country: apiData.data.sys.country,
+                temperature: apiData.data.main.temp,
+                description: apiData.data.weather[0].description,
+            });
+            console.log(apiData.data);
         })
         .catch(function (error) {
             // handle error
@@ -29,9 +38,12 @@ function App() {
         </header>
         <div>
         <WeatherForm getWeatherData={getWeatherData}/>
-        <li>{weather.main && weather.main.temp}</li>
-        <li>{weather.weather && weather.weather[0].main}</li>
-        <li>{weather.name}</li>
+        <WeatherChart 
+            city={weather.city}
+            country={weather.country}
+            temperature={weather.temperature}
+            description={weather.description}
+        />
         </div>
     </div>
   );
