@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import WeatherForm from "./components/WeatherForm";
 import WeatherChart from "./components/WeatherChart";
 import './App.css';
+require('dotenv').config();
 const axios = require('axios').default;
 
-const API_KEY = "e253a95cf981ba68d074c93288f773e7";
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 function App() {
     const [weather, setWeather] = useState({});
