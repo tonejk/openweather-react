@@ -9,6 +9,7 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 function App() {
     const [weather, setWeather] = useState({});
+    const [error, setError] = useState(null);
 
     const getWeatherData = (e) => {
         e.preventDefault();
@@ -17,6 +18,7 @@ function App() {
         
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}fi&units=metric&appid=${API_KEY}`)
         .then(function (apiData) {
+        if (city && country) {
             setWeather({
                 data: apiData,
                 city: apiData.data.name,
@@ -26,9 +28,11 @@ function App() {
                 description: apiData.data.weather[0].description,
             });
             console.log(apiData.data);
-        })
+        } else {
+            setError("Please enter a city and country");
+        }}) 
         .catch(function (error) {
-            // handle error
+            setError("Please enter a city and country");
             console.log(error);
         })
     }
@@ -39,7 +43,10 @@ function App() {
             <p>OpenWeather</p>
         </header>
         <div>
-        <WeatherForm getWeatherData={getWeatherData}/>
+        <WeatherForm 
+            getWeatherData={getWeatherData}
+            error={error}
+        />
         <WeatherChart 
             city={weather.city}
             country={weather.country}
