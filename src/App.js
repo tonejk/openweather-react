@@ -21,7 +21,8 @@ function App() {
                 data: apiData,
                 city: apiData.data.name,
                 country: apiData.data.sys.country,
-                temperature: apiData.data.main.temp,
+                tempC: apiData.data.main.temp,
+                tempF: apiData.data.main.temp*9/5+32,
                 description: apiData.data.weather[0].description,
             });
             console.log(apiData.data);
@@ -42,7 +43,8 @@ function App() {
         <WeatherChart 
             city={weather.city}
             country={weather.country}
-            temperature={weather.temperature}
+            tempC={weather.tempC}
+            tempF={weather.tempF}
             description={weather.description}
         />
         </div>
