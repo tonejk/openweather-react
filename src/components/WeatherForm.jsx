@@ -21,7 +21,9 @@ const WeatherForm = ({ getWeatherData, error }) => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                {error}
+                <div>
+                    {error}
+                </div>
             </Form>
         </div>
     )

@@ -9,7 +9,7 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 function App() {
     const [weather, setWeather] = useState({});
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
 
     const getWeatherData = (e) => {
         e.preventDefault();
@@ -27,6 +27,7 @@ function App() {
                 tempF: apiData.data.main.temp*9/5+32,
                 description: apiData.data.weather[0].description,
             });
+            setError("");
             console.log(apiData.data);
         } else {
             setError("Please enter a city and country");
