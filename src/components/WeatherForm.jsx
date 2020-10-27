@@ -6,11 +6,12 @@ const WeatherForm = ({ getWeatherData, error }) => {
     return (
         <div>
             <Form onSubmit={getWeatherData}>
-                <Form.Group>
+                <Form.Group className="mx-auto w-50 mt-3">
                     <Form.Control 
                         type="text"
                         name="city"
                         placeholder="City"
+                        className="mb-3"
                     />
                     <Form.Control 
                         type="text"
