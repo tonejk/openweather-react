@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const WeatherForm = ({ getWeatherData, error }) => {
     return (
-        <div>
+        <div className="text-center">
             <Form onSubmit={getWeatherData}>
                 <Form.Group className="mx-auto w-50 mt-3">
                     <Form.Control 
