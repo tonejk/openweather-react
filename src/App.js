@@ -41,12 +41,11 @@ function App() {
   return (
     <div className="App">
         <header className="App-header">
-            <p>OpenWeather</p>
+            <p>SimpleWeather</p>
         </header>
         <div>
         <WeatherForm 
             getWeatherData={getWeatherData}
-            error={error}
         />
         <WeatherChart 
             city={weather.city}
@@ -54,6 +53,7 @@ function App() {
             tempC={weather.tempC}
             tempF={weather.tempF}
             description={weather.description}
+            error={error}
         />
         </div>
     </div>

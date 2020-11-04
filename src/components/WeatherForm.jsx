@@ -2,7 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const WeatherForm = ({ getWeatherData, error }) => {
+const WeatherForm = ({ getWeatherData }) => {
     return (
         <div className="text-center">
             <Form onSubmit={getWeatherData}>
@@ -22,9 +22,6 @@ const WeatherForm = ({ getWeatherData, error }) => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <div>
-                    {error}
-                </div>
             </Form>
         </div>
     )

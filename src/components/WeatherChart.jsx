@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
 
-const WeatherChart = ({ city, country, tempC, tempF, description, icon }) => {
+const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
     const [temp, setTemp] = useState();
     const [unit, setUnit] = useState();
     
@@ -26,6 +26,7 @@ const WeatherChart = ({ city, country, tempC, tempF, description, icon }) => {
         <Button onClick={ConvertTemp} variant="primary" className="d-flex justify-content-center mx-auto mt-3">
             Unit {unit}
         </Button>
+        <p className="text-center text-white">{error}</p>
         {city && country ? 
             <div className="chart">
                 {<p>{city}, {country}</p>}
