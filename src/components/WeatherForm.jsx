@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./Style.css";
 
 const WeatherForm = ({ getWeatherData }) => {
     return (
@@ -11,16 +12,17 @@ const WeatherForm = ({ getWeatherData }) => {
                         type="text"
                         name="city"
                         placeholder="City"
-                        className="mb-3"
+                        className="formInput mb-3"
                     />
                     <Form.Control 
                         type="text"
                         name="country"
                         placeholder="Country"
+                        className="formInput"
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Get Weather
                 </Button>
             </Form>
         </div>

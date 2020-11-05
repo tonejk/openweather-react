@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
         <header className="App-header">
-            <p>SimpleWeather</p>
+            <p>Urban Weather</p>
         </header>
         <div>
         <WeatherForm 

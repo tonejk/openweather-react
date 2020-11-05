@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import ListGroup from "react-bootstrap/ListGroup";
 import "./Style.css";
 
 const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
@@ -23,15 +24,22 @@ const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
 
     return (
         <div>
-        <Button onClick={ConvertTemp} variant="primary" className="d-flex justify-content-center mx-auto mt-3">
+        <Button 
+            onClick={ConvertTemp} 
+            variant="primary" 
+            className="d-flex justify-content-center mx-auto mt-3">
             Unit {unit}
         </Button>
-        <p className="text-center text-white">{error}</p>
+        {error ? 
+        <ListGroup>
+            <ListGroup.Item className="error">{error}</ListGroup.Item>
+        </ListGroup>
+        : null}
         {city && country ? 
-            <div className="chart">
+            <div className="weatherChart">
                 {<p>{city}, {country}</p>}
                 <p>{temp ? temp.toFixed(1) : null}{unit}</p>
-                {<p>{description}</p>} 
+                {<p>{description}</p>}
             </div>
             : null}
         </div>
