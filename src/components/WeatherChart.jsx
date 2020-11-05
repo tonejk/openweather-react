@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
 import "./Style.css";
 
 const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
@@ -31,9 +30,7 @@ const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
             Unit {unit}
         </Button>
         {error ? 
-        <ListGroup>
-            <ListGroup.Item className="error">{error}</ListGroup.Item>
-        </ListGroup>
+            <p className="error">{error}</p>
         : null}
         {city && country ? 
             <div className="weatherChart">
