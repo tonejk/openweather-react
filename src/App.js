@@ -28,7 +28,6 @@ function App() {
                 description: apiData.data.weather[0].description,
             });
             setError("");
-            console.log(apiData.data);
         } else {
             setError("Please enter a city and country");
         }}) 
