@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Setup
+
+Install node modules with "npm install"
+Create .env file to project root folder and add variable REACT_APP_WEATHER_API_KEY with your API key from https://openweathermap.org/.
+
 ## Available Scripts
 
 In the project directory, you can run:
