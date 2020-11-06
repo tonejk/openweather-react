@@ -1,0 +1,42 @@
+.formInput {
+    background: none !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 2px solid #f5f5f5 !important;
+}
+
+.formInput:focus {
+    border-bottom: 2px solid #CFBA58 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.weatherChart {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.error {
+    background: #CFBA58 !important;
+    border: none !important;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+/* Placeholder */ 
+::placeholder {
+    color: #FFFFFF !important;
+    opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #FFFFFF !important;
+}
