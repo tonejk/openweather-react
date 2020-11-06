@@ -29,6 +29,9 @@
     font-weight: 800;
     margin-top: 2rem;
     text-transform: uppercase;
+    width: 50%;
+    margin: auto;
+    margin-top: 1rem;
 }
 
 /* Placeholder */ 
