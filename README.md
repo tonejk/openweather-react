@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Info
+
+A small project that shows the temperature of a given city and country. 
+the user can select the temperature unit.
+
 # Setup
 
 - Install node modules with "npm install"<br />
