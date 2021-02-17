@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Info
 
 A small project that shows the temperature of a given city and country. 
-the user can select the temperature unit.
+The user can select the temperature unit.
 
 # Setup
 
