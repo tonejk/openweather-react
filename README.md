@@ -9,7 +9,7 @@ The user can select the temperature unit.
 
 - Install node modules with "npm install"<br />
 - Create .env file to project root folder<br />
-- Add environment variable REACT_APP_WEATHER_API_KEY to .env file with your API key from https://openweathermap.org/.
+- Add environment variable REACT_APP_WEATHER_API_KEY to .env file with your API key from https://openweathermap.org/
 
 ## Available Scripts
 
