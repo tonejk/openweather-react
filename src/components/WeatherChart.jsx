@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import "./Style.css";
+import "../css/Style.css";
 
 const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
     const [temp, setTemp] = useState();

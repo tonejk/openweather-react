@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WeatherForm from "./components/WeatherForm";
 import WeatherChart from "./components/WeatherChart";
-import './App.css';
+import './css/App.css';
 require('dotenv').config();
 const axios = require('axios').default;
 
