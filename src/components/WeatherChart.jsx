@@ -9,7 +9,7 @@ const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
     useEffect(() => {
         setTemp(tempC);
         setUnit(<>&deg;C</>);
-    }, [tempC])
+    }, [tempC]);
     
     const ConvertTemp = () => { 
         if(temp === tempF) {
@@ -29,9 +29,7 @@ const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
             className="d-flex justify-content-center mx-auto mt-3">
             Unit {unit}
         </Button>
-        {error ? 
-            <p className="error">{error}</p>
-        : null}
+        {error ? <p className="error">{error}</p> : null}
         {city && country ? 
             <div className="weatherChart">
                 {<p>{city}, {country}</p>}
@@ -40,8 +38,7 @@ const WeatherChart = ({ city, country, tempC, tempF, description, error }) => {
             </div>
             : null}
         </div>
-    )
+    );
 }
-
 
 export default WeatherChart;

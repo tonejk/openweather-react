@@ -26,9 +26,7 @@ const WeatherForm = ({ getWeatherData }) => {
                 </Button>
             </Form>
         </div>
-    )
-
+    );
 }
-
 
 export default WeatherForm;

@@ -32,9 +32,9 @@ function App() {
             setError("Please enter a city and country");
         }}) 
         .catch(function (error) {
-            setError("Please enter a city and country");
+            setError("API_KEY not found");
             console.log(error);
-        })
+        });
     }
 
   return (
