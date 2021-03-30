@@ -1,10 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Info
+
+A small project that shows the temperature of a given city and country. 
+The user can select the temperature unit.
+
 # Setup
 
 - Install node modules with "npm install"<br />
 - Create .env file to project root folder<br />
-- Add environment variable REACT_APP_WEATHER_API_KEY to .env file with your API key from https://openweathermap.org/.
+- Add environment variable REACT_APP_WEATHER_API_KEY to .env file with your API key from https://openweathermap.org/
 
 ## Available Scripts
 

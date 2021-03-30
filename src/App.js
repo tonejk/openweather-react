@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WeatherForm from "./components/WeatherForm";
 import WeatherChart from "./components/WeatherChart";
-import './App.css';
+import './css/App.css';
 require('dotenv').config();
 const axios = require('axios').default;
 
@@ -32,9 +32,9 @@ function App() {
             setError("Please enter a city and country");
         }}) 
         .catch(function (error) {
-            setError("Please enter a city and country");
+            setError("API_KEY not found");
             console.log(error);
-        })
+        });
     }
 
   return (
