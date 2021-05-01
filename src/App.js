@@ -11,14 +11,27 @@ function App() {
     const [weather, setWeather] = useState({});
     const [error, setError] = useState("");
 
-    const getWeatherData = (e) => {
-        e.preventDefault();
-        const city = e.target.city.value;
-        const country = e.target.country.value;
+    /**
+     * Get the weather data
+     * 
+     * @param {object} event Event object
+     *  
+     * @return void 
+     */
+    const getWeatherData = (event) => {
+        event.preventDefault();
+        let city = event.target.city.value;
+        let country = event.target.country.value;
+        
+        // Validate the user input city and country before the API request
+        if (typeof city !== 'string' || typeof country !== 'string' ||
+            city.length === 0 || country.length === 0) {
+            setError("Please enter a city and country");
+            return;
+        } 
         
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}fi&units=metric&appid=${API_KEY}`)
         .then(function (apiData) {
-        if (city && country) {
             setWeather({
                 data: apiData,
                 city: apiData.data.name,
@@ -28,13 +41,31 @@ function App() {
                 description: apiData.data.weather[0].description,
             });
             setError("");
-        } else {
-            setError("Please enter a city and country");
-        }}) 
+        }) 
         .catch(function (error) {
-            setError("API_KEY not found");
-            console.log(error);
+            setApiError(error);
         });
+    }
+
+    /**
+     * Set error received from the API to UI
+     * 
+     * @param {object} error Object error from the API 
+     * 
+     * @return void
+     */
+    function setApiError (error) {
+        // Validate the error object
+        if (typeof error === 'object' &&
+            error !== null &&
+            typeof error.response === 'object' &&
+            typeof error.response.data === 'object' &&
+            typeof error.response.data.message === 'string' ) {
+            setError(error.response.data.message);
+            return;
+        }
+        // The error object couldn't be validated, inform as an unknown API error
+        setError('Unknown API error');
     }
 
   return (
