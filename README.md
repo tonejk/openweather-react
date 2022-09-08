@@ -5,6 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 A small project that shows the temperature of a given city and country. 
 The user can select the temperature unit.
 
+# Preview
+
+![My Image](preview.jpg)
+
 # Setup
 
 - Install node modules with "npm install"<br />
