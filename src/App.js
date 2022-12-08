@@ -71,7 +71,7 @@ function App() {
   return (
     <div className="App">
         <header className="App-header">
-            <p>Urban Weather</p>
+            <p>Weather App</p>
         </header>
         <div>
         <WeatherForm 
