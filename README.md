@@ -7,7 +7,7 @@ The user can select the temperature unit.
 
 # Preview
 
-![My Image](preview.jpg)
+
 
 # Setup
 
